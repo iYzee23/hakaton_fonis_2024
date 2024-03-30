@@ -1,0 +1,63 @@
+[{
+  "_id": {
+    "$oid": "6608533f68df1b12c87e8032"
+  },
+  "id": 1,
+  "ucesnik1": "pedja",
+  "ucesnik2": "luana",
+  "datum": "2024-03-28",
+  "vreme": "13:30",
+  "vremeKraja": "15:00",
+  "tip": "HR",
+  "status": "potvrdjen",
+  "pitanja": [
+    "Prvo pitanje",
+    "Drugo pitanje",
+    "Trece pitanje",
+    "Cetvrto pitanje",
+    "Peto pitanje",
+    "Sesto pitanje",
+    "Sedmo pitanje",
+    "Osmo pitanje",
+    "Deveto pitanje",
+    "Deseto pitanje"
+  ],
+  "feedback": [
+    "Prvo feedback",
+    "Drugo feedback",
+    "Trece feedback",
+    "Cetvrto feedback",
+    "Peto feedback",
+    "Sesto feedback",
+    "Sedmo feedback",
+    "Osmo feedback",
+    "Deveto feedback",
+    "Deseto feedback"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6608533f68df1b12c87e8033"
+  },
+  "id": 2,
+  "ucesnik1": "pedja",
+  "ucesnik2": "bogi",
+  "datum": "2024-03-31",
+  "vreme": "19:30",
+  "vremeKraja": "21:00",
+  "tip": "HR",
+  "status": "potvrdjen",
+  "pitanja": [
+    "Prvo pitanje",
+    "Drugo pitanje",
+    "Trece pitanje",
+    "Cetvrto pitanje",
+    "Peto pitanje",
+    "Sesto pitanje",
+    "Sedmo pitanje",
+    "Osmo pitanje",
+    "Deveto pitanje",
+    "Deseto pitanje"
+  ],
+  "feedback": []
+}]
