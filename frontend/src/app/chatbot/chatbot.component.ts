@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../user.service';
 import { Chatbot } from '../models/chatbot';
-// import * as SpeechSDK from 'microsoft-cognitiveservices-speech-sdk'
+import * as SpeechSDK from 'microsoft-cognitiveservices-speech-sdk'
 
 @Component({
   selector: 'app-chatbot',
@@ -50,7 +50,7 @@ export class ChatbotComponent {
     );
   }
 
-  /*
+
   async startListening() {
     const subscriptionKey = '542f3fbc78cb4616bf450c37a33b85e2';
     const serviceRegion = 'northeurope';
@@ -91,7 +91,6 @@ export class ChatbotComponent {
       },
     );
   }
-  */
 
   
   logout(){
