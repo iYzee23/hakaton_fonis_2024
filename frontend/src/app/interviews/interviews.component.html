@@ -172,13 +172,16 @@
           <br><br>
         </div>
 
-        <div *ngIf="flag">
+        <div *ngIf="!flagMessage">
             <h3>Paired User's Calendar Overview</h3><br>
             <div class=" row calendarContainer">
               <full-calendar [options]="kalendarOptionsPaired"></full-calendar>
             </div>
             <br>
             <button type="button" class="btn" (click)="schedule()">Schedule</button>
+        </div>
+        <div *ngIf="flagMessage">
+            <h3>{{requestMessage}}</h3>
         </div>
 
         

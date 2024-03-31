@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 let Availability = new Schema(
     {
         datum:String,
-        nastavnik:String,
+        korime:String,
         pocetakRada:String,
         krajRada:String,
         slobodanDan:Boolean

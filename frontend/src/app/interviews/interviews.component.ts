@@ -25,6 +25,7 @@ export class InterviewsComponent implements OnInit {
   requestMessage: string = "";
   privremen: Interview = new Interview();
   flag:boolean = false;
+  flagMessage:boolean=false;
 
   delay(ms: number): Promise<void> {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -45,6 +46,7 @@ export class InterviewsComponent implements OnInit {
       data => {
         if (data != null) {
           if (data.length % 2 == 0) {
+            this.flagMessage=true;
             this.requestMessage = "Your request has been received. The call will appear in your call list and calendar as soon as someone is paired with you.";
 
             let nova = new Interview();
@@ -66,6 +68,7 @@ export class InterviewsComponent implements OnInit {
                 );
               }
             } else {
+              
               let cntt = 10;
               for (let i = 0; i < 10; i++) {
                 const num = 59 + Math.floor(Math.random() * 30);
@@ -87,6 +90,7 @@ export class InterviewsComponent implements OnInit {
 
 
           } else {
+            this.flagMessage=false;
             //uzmemo poslednji podatak tj onaj na poziciji data.length-1 zapravo 
             //njemu azuriramo status i ucesnik1
 
@@ -233,6 +237,7 @@ export class InterviewsComponent implements OnInit {
 
           }
         } else {
+          this.flagMessage=true;
           this.requestMessage = "Your request has been received. The call will appear in your call list and calendar as soon as someone is paired with you.";
 
           let nova = new Interview();
