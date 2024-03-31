@@ -183,6 +183,31 @@ tr:hover {
     transition: transform 0.2s ease;
 }
 
-ngb-rating {
-    font-size: 25px;
+.calendarContainer{
+    background-color: rgba(124, 156, 148,1);
+}
+
+::ng-deep .fc-header-toolbar {
+    background-color:#043c2c;
+    color:#cee2d2;
+}
+  
+::ng-deep .fc-title {
+    font-size: 14px;
+}
+
+::ng-deep .fc-col-header-cell-cushion{
+    color: #cee2d2;
+}
+
+::ng-deep .fc-button{
+    background-color: #568a6e !important;
+}
+
+::ng-deep .fc-prev-button{
+    background-color: #568a6e!important;
+}
+
+::ng-deep .fc-button-primary{
+    background-color: #568a6e !important;
 }

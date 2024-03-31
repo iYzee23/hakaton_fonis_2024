@@ -109,6 +109,28 @@
                 <p *ngIf="confirmedSimulations.length==0">No scheduled interview simulations in the next three days.</p>
             </div>
 
+            <br>
+            <hr>
+            <br>
+            <h3>My Calendar Overview</h3><br>
+            <div class=" row calendarContainer">
+              <full-calendar [options]="kalendarOptions"></full-calendar>
+            </div>
+            
+            <br>
+            <hr>
+            <br>
+            <div>
+                <h3>Define Availability</h3><br>
+                <label>Date and Time</label><br>
+                <input type="date" class="forminput" [(ngModel)]="datumRada"><br><br>
+                <input type="time" class="forminput" [(ngModel)]="pocetakRada"><br><br>
+                <input type="time" class="forminput" [(ngModel)]="krajRada"><br><br>
+                <button type="button" class="btn" (click)="definisiRadno()" >Definisi</button> &nbsp;
+                <br><br><p class="errorMessage">{{errorMessageRadno}}</p>
+            </div>
+
+
             
             <h3>Past Simulations</h3><br>
             <div><br></div>
@@ -146,7 +168,17 @@
           <button  type="button" class="btn" (click)="test()" [disabled]="firstOpen==false">Request a Simulation</button>
           <br><br>
         </div>
-       
+
+        <div *ngIf="flag">
+            <h3>Paired User's Calendar Overview</h3><br>
+            <div class=" row calendarContainer">
+              <full-calendar [options]="kalendarOptionsPaired"></full-calendar>
+            </div>
+            <br>
+            <button type="button" class="btn" (click)="schedule()">Schedule</button>
         </div>
-        </div>
+
+        
+      </div>
+    </div>
 </body>

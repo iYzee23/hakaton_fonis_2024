@@ -12,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { JitsimeetComponent } from './jitsimeet/jitsimeet.component';
 import { InterviewfeedbackComponent } from './interviewfeedback/interviewfeedback.component';
 import { ChatbotComponent } from './chatbot/chatbot.component';
+import {FullCalendarModule} from '@fullcalendar/angular';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { ChatbotComponent } from './chatbot/chatbot.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    FullCalendarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

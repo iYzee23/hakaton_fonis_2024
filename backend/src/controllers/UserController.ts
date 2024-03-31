@@ -2,6 +2,8 @@ import express from 'express'
 import user from '../models/user';
 import interview from '../models/interview';
 import chatbot from '../models/chatbot';
+import availability from '../models/availability';
+import question from '../models/question';
 
 export class UserController {
     getBotSve = (req: express.Request, res: express.Response) => {
@@ -46,5 +48,127 @@ export class UserController {
             }
         ).catch((err)=>console.log(err));
     }
+
+    definisiAvailability = (req: express.Request, res: express.Response) => {
+        let av = req.body.availability;
+
+        availability.findOne({datum:av.datum,korime:av.korime}).then(
+            (radvreme)=>{
+                if(radvreme!=null){
+                    //update ovog
+                    radvreme.updateOne({datum:av.datum,korime:av.korime},{pocetakRada:av.pocetakRada,krajRada:av.krajRada,
+                    slobodanDan:av.slobodanDan}).then(
+                        (uspelo)=>{
+                            res.json({message:"ok"});
+                        }
+                    ).catch((err)=>res.json({message:"Greska pri update-ovanju radnog vremena!"}));
+                }else{
+                    let novoRV = new availability(av);
+                    novoRV.save().then(
+                        (uspelo)=>{
+                            res.json({message:"ok"});
+                        }
+                    ).catch((err)=>res.json({message:"Greska pri cuvanju radnog vremena!"}))
+                }
+            }
+        )
+    }
+
+    getAvailability = (req: express.Request, res: express.Response) => {
+        let korime = req.body.korime;
+        
+        availability.find({korime:korime}).then(
+            (rv)=>{
+                res.json(rv);
+            }
+        ).catch((err)=>console.log(err));
+    }
+
+    getUnpairedInterview = (req: express.Request, res: express.Response) => {
+        let type = req.body.type;
+
+        interview.find({tip:type, status: "pending"}).then(
+            (rv)=>{
+                res.json(rv);
+            }
+        ).catch((err)=>console.log(err));
+    }
+    createInterviewRequest = (req: express.Request, res: express.Response) => {
+        let inter = req.body.interview;
+    
+        // Assuming interview is your Mongoose model
+        interview.findOne({}, {}, { sort: { 'id': -1 } })
+            .then((latestInterview) => {
+                if (latestInterview) {
+                    // Set the id of the new interview object
+                    inter.id = latestInterview.id + 1; // Assuming id is a sequential number
+                    
+                    // Create a new interview object
+                    let noviInter = new interview(inter);
+    
+                    // Save the new interview object
+                    noviInter.save()
+                        .then(() => {
+                            res.json({ message: "ok" });
+                        })
+                        .catch((err) => {
+                            console.error(err);
+                            res.status(500).json({ message: "error" });
+                        });
+                } else {
+                    // If there are no existing interviews, set id to 1
+                    inter.id = 1;
+    
+                    // Create a new interview object
+                    let noviInter = new interview(inter);
+    
+                    // Save the new interview object
+                    noviInter.save()
+                        .then(() => {
+                            res.json({ message: "ok" });
+                        })
+                        .catch((err) => {
+                            console.error(err);
+                            res.status(500).json({ message: "error" });
+                        });
+                }
+            })
+            .catch((err) => {
+                console.error(err);
+                res.status(500).json({ message: "error" });
+            });
+    }
+    
+
+    pairInterview = (req: express.Request, res: express.Response) => {
+        let inter = req.body.interview;
+    
+        interview.findOneAndUpdate({ id: inter.id }, inter, { new: true })
+            .then((updatedInterview) => {
+                if (updatedInterview) {
+                    console.log("found")
+                    res.json({ message: "ok", updatedInterview });
+                   
+                } else {
+                    res.status(404).json({ message: "Interview not found" });
+                    
+                }
+            })
+            .catch((err) => {
+                console.error(err);
+                res.status(500).json({ message: "error" });
+            });
+    }
+    
+
+    getQuestions = (req: express.Request, res: express.Response) => {
+        let rb = req.body.rb;
+
+        question.findOne({id:rb}).then(
+            (data) => {
+                res.json(data);
+            }
+        ).catch((err)=>console.log(err));;
+    };
 
 }

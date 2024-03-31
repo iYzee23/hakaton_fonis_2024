@@ -18,5 +18,28 @@ userRouter.route('/getPotvrdjeneSimulacije').post(
 userRouter.route('/postaviFeedbackSimulacije').post(
     (req, res) => new UserController().postaviFeedbackSimulacije(req, res)
 )
+userRouter.route('/definisiAvailability').post(
+    (req,res) =>new UserController().definisiAvailability(req, res)
+)
+
+userRouter.route('/getAvailability').post(
+    (req,res) =>new UserController().getAvailability(req, res)
+)
+
+userRouter.route('/getUnpairedInterview').post(
+    (req,res) =>new UserController().getUnpairedInterview(req, res)
+)
+
+userRouter.route('/createInterviewRequest').post(
+    (req,res) =>new UserController().createInterviewRequest(req, res)
+)
+
+userRouter.route('/pairInterview').post(
+    (req,res) =>new UserController().pairInterview(req, res)
+)
+
+userRouter.route('/getQuestions').post(
+    (req, res) => new UserController().getQuestions(req, res)
+)
 
 export default userRouter;
