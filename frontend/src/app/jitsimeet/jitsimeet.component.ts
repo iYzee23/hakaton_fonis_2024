@@ -2,6 +2,7 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../models/user';
 import { Interview } from '../models/interview';
+import { UserService } from '../user.service';
 declare var JitsiMeetExternalAPI: any;
 
 @Component({
@@ -10,23 +11,33 @@ declare var JitsiMeetExternalAPI: any;
   styleUrls: ['./jitsimeet.component.css']
 })
 export class JitsimeetComponent {
-  constructor( private router: Router) { }
+  constructor( private router: Router, private service:UserService) { }
 
   
   ngOnInit(): void {
     let cm = localStorage.getItem("joinedSimulation");
     if(cm) this.interview=JSON.parse(cm);
-    let i = 0;
-    while(i<5) this.pitanja1.push(this.interview.pitanja[i]);
-    while(i<10) this.pitanja2.push(this.interview.pitanja[i]);
-
+    
     let kr = localStorage.getItem("loggedUser");
     if(kr) this.ulogovan = JSON.parse(kr);
+
+    if(this.ulogovan.korime == this.interview.ucesnik1){
+      //mi smo ucesnik1, sagovornik nam je ucesnik2
+      this.sagovornik = this.interview.ucesnik2;
+      let i = 5;
+      while(i<10) this.pitanja.push(this.interview.pitanja[i++]);
+    }
+    else{
+      this.sagovornik = this.interview.ucesnik1;
+      let i=0;
+      while(i<5) this.pitanja.push(this.interview.pitanja[i++]);
+    } 
 
     this.room = 'Simulation-' + this.interview.id;
     this.user = {
         name: this.ulogovan.ime + " " + this.ulogovan.prezime,
     }
+    console.log(this.user);
   }
 
   domain: string = "meet.jit.si"; 
@@ -36,10 +47,12 @@ export class JitsimeetComponent {
   user: any;
 
   interview:Interview=new Interview();
-  pitanja1:String[]=[];
-  pitanja2:String[]=[];
+  pitanja:String[]=[];
 
   ulogovan:User=new User();
+  sagovornik:String='';
+  feedback:string[]=[];
+  errorMessage:String="";
 
   isAudioMuted = false;
   isVideoMuted = false;
@@ -91,7 +104,7 @@ export class JitsimeetComponent {
 
   handleVideoConferenceLeft = () => {
       if(this.hangupFlag){
-        this.router.navigate([""]);
+        this.router.navigate(["interviews"]);
       }
 
   }
@@ -116,7 +129,7 @@ export class JitsimeetComponent {
     this.api.executeCommand(command);
     if(command == 'hangup') {
        this.hangupFlag=true;
-       this.router.navigate([""]);
+       this.router.navigate(["interviews"]);
 
       return;
     }
@@ -128,5 +141,31 @@ export class JitsimeetComponent {
     if(command == 'toggleVideo') {
         this.isVideoMuted = !this.isVideoMuted;
     }
-}
+  } 
+
+  submitFeedback(){
+    if(this.feedback.length!=5){
+      this.errorMessage="Please provide feedback on every response!";
+      return;
+    }
+
+    if(this.ulogovan.korime == this.interview.ucesnik1){
+      let i = 5;
+      while(i<10){
+        this.interview.feedback[i] = this.feedback[i];
+        i++;
+      }
+    } else{
+      let i=0;
+      while(i<5){
+        this.interview.feedback[i] = this.feedback[i];
+        i++;
+      }
+    } 
+
+    this.service.postaviFeedbackSimulacije(this.interview.id, this.interview.feedback).subscribe();
+
+    this.errorMessage="";
+    this.executeCommand('hangup');
+  }
 }

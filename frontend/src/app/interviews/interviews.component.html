@@ -54,45 +54,99 @@
 
     </div>
 </nav>
-<body>
+<body style="background-color: rgb(81, 30, 35);">
     <div class="row">
         <div class="loginDiv content">
             <div class="loginDivContent">
-                <h3>Simulations in the next three days</h3><br>
-                <div><br></div>
-                <div class="table-responsive-lg table-responsive-md table-responsive-sm">
-                    <table class="table table-striped table-hover" *ngIf="confirmedSimulations.length>0">
-                        <thead>
-                            <tr>
-                                <th>Participants</th>
-                                <th>Date</th>
-                                <th>Time</th>
-                                <th>Type</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let simulation of confirmedSimulations; let index = index">
-                                <td>{{simulation.ucesnik1}} - {{simulation.ucesnik2}}</td>
-                                <td>{{simulation.datum}}</td>
-                                <td>{{simulation.vreme}}</td>
-                                <td>{{simulation.tip}}</td>
-                                <td>
-                                    <button *ngIf="vreme>=petnaestMinutaPred(simulation.vreme) && vreme<=simulation.vreme && 
-                                    simulation.datum==danasnjiDatum" type="button" class="btn"
-                                        (click)="enterSimulation(simulation)">Enter Simulation</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <p *ngIf="confirmedSimulations.length==0">No scheduled interview simulations in the next three days.</p>
-                </div>
+
 
                 <br>
                 <hr>
                 <br>
 
+
             </div>
         </div>
     </div>
+
+    <div class="row">
+
+        <div class="loginDiv content fade-in nastavnikDiv row" id="prvi">
+
+            <div class="buttonDiv">
+                <button  type="button" class="btn" (click)="test()" [disabled]="firstOpen==true">Simulation Overview</button> &nbsp;&nbsp;
+                <button  type="button" class="btn" (click)="test()" [disabled]="firstOpen==false">Request a Simulation</button>
+                <br><br>
+            </div>
+
+            <h3>Simulations in the next three days</h3><br>
+            <div><br></div>
+            <div class="table-responsive-lg table-responsive-md table-responsive-sm">
+                <table class="table table-striped table-hover" *ngIf="confirmedSimulations.length>0">
+                    <thead>
+                        <tr>
+                            <th>Participants</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Type</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let simulation of confirmedSimulations; let index = index">
+                            <td>{{simulation.ucesnik1}} - {{simulation.ucesnik2}}</td>
+                            <td>{{simulation.datum}}</td>
+                            <td>{{simulation.vreme}}</td>
+                            <td>{{simulation.tip}}</td>
+                            <td>
+                                <button [disabled]="!(vreme>=petnaestMinutaPred(simulation.vreme) && vreme<=simulation.vreme && 
+                                simulation.datum==danasnjiDatum)" type="button" class="btn"
+                                    (click)="enterSimulation(simulation)">Enter</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p *ngIf="confirmedSimulations.length==0">No scheduled interview simulations in the next three days.</p>
+            </div>
+
+            
+            <h3>Past Simulations</h3><br>
+            <div><br></div>
+            <div class="table-responsive-lg table-responsive-md table-responsive-sm">
+                <table class="table table-striped table-hover" *ngIf="previousSimulations.length>0">
+                    <thead>
+                        <tr>
+                            <th>Participants</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Type</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let simulation of previousSimulations; let index = index">
+                            <td>{{simulation.ucesnik1}} - {{simulation.ucesnik2}}</td>
+                            <td>{{simulation.datum}}</td>
+                            <td>{{simulation.vreme}}</td>
+                            <td>{{simulation.tip}}</td>
+                            <td>
+                                <button type="button" class="btn" (click)="showFeedback(simulation)">See feedback</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p *ngIf="previousSimulations.length==0">No previous simulations.</p>
+            </div>
+      
+      </div>
+      
+      <div class="loginDiv content fade-out ucenikDiv row" id="drugi">
+        <div class="buttonDiv">
+          <button  type="button" class="btn" (click)="test()" [disabled]="firstOpen==true">Simulation Overview</button> &nbsp;&nbsp;
+          <button  type="button" class="btn" (click)="test()" [disabled]="firstOpen==false">Request a Simulation</button>
+          <br><br>
+        </div>
+       
+        </div>
+        </div>
 </body>

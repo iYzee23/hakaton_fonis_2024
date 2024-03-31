@@ -5,8 +5,9 @@
   "main": "dist/server.js",
   "scripts": {
     "start": "npm run serve",
-	"serve" : "node dist/server.js",
-    "build": "tsc"
+	  "serve" : "node dist/server.js",
+    "build": "tsc",
+    "fon": "tsc && npm run serve"
   },
   "author": "",
   "license": "ISC",

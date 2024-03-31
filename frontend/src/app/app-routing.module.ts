@@ -5,13 +5,17 @@ import { HomeComponent } from './home/home.component';
 import { InterviewsComponent } from './interviews/interviews.component';
 import { PairProgrammingComponent } from './pair-programming/pair-programming.component';
 import { JitsimeetComponent } from './jitsimeet/jitsimeet.component';
+import { InterviewfeedbackComponent } from './interviewfeedback/interviewfeedback.component';
+import { ChatbotComponent } from './chatbot/chatbot.component';
 
 const routes: Routes = [
   {path:"", component:LoginComponent},
   {path:"home",component:HomeComponent},
   {path:"interviews",component:InterviewsComponent},
   {path:"jitsi",component:JitsimeetComponent},
-  {path:"pairProgramming",component:PairProgrammingComponent}
+  {path:"feedback",component:InterviewfeedbackComponent},
+  {path:"pairProgramming",component:PairProgrammingComponent},
+  {path:"chatbot",component:ChatbotComponent}
 ];
 
 @NgModule({

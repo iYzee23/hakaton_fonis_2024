@@ -5,15 +5,16 @@
 
 <div class="loginDiv">
     <div class="loginDivContent row">
-        <h3>Interview simulation with user: AAAAAAA</h3><br>
-        <h5>Interview type: HR/TECH</h5>
-        <h5>Date: AAAAA From: STARTh To: ENDh</h5>
-
+        <h3>Interview simulation with user: {{sagovornik}}</h3>
+        <h5>Interview type: {{interview.tip}}</h5>
+        <h5>Date: {{interview.datum}} From: {{interview.vreme}}h To: {{interview.vremeKraja}}h</h5>
+        <br><br>
+        <hr>
         <div class="row">
             <div class="col-md-6">
                 
                 <br>
-                <div id="jitsi-iframe" class="col-sm-12 col-md-12 col-l-12 col-xl-12"></div>
+                <div id="jitsi-iframe" class="col-sm-12 col-md-12 col-l-12 col-xl-12" style="padding-left: 30px;"></div>
                 <br>
 
                 <div class="item-center"> 
@@ -21,30 +22,40 @@
                 </div>
             </div>
             <div class="col-md-6">
-                PITANJA ZA: {{interview.ucesnik1}}
-                <table>
-                    <tr>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                    
-                    <ng-component *ngFor="let pitanje of pitanja1">
-                        <tr>pitanje</tr>
+                <h3>Questions to ask {{sagovornik}}:</h3>
+                <br>
+                <div class="row" style="justify-content: center; display: flex;">
+                    <div class="col-md-12" style="justify-content: center; display: flex; padding-left: 90px;">
+                        <table>
                         <tr>
-                            <input type="text" style="width: 200px; height: 300px;">
+                            <th></th>
+                            <th></th>
                         </tr>
-                    </ng-component>
-                 
-                </table>
+                        
+                        <ng-container *ngFor="let pitanje of pitanja; let index = index;">
+                            <tr>{{pitanje}}</tr>
+                            <tr>
+                                <input type="text" style="width: 600px; height: 60px;" [(ngModel)]="feedback[index]">
+                            </tr>
+                            <tr><br></tr>
+                        </ng-container>
+                     
+                        </table>
+
+                        <br>
+                        
+                    </div>
+                    <button type="button" class="btn" (click)="submitFeedback()" style="margin-left: 90px;">Submit Feedback</button>
+                    <br><p class="errorMessage" style="margin-left: 90px;">{{errorMessage}}</p>
+                </div>
+                
 
                 <br><hr><br>
+                
 
-                PITANJA ZA: {{interview.ucesnik2}}
             </div>
-        </div>
-        
-  </div>
-
-
+        </div> 
+      
+    </div>
 </div>
 

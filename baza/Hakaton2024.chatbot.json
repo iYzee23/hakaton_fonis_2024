@@ -1,0 +1,63 @@
+[{
+	"rb": 1,
+	"tip": "HR",
+	"bot": "Project that you did recently - how long it took and what was the result?",
+	"pitanje": "I worked on a web app. It tooks three month to complete. The results was impressive.",
+	"odgovor": "You should use TOOK instead of TOOKS for past tense as in 'It took three months to complete'. Use WERE instead of WAS for plural subjects as in 'The results were impressive'."
+},
+{
+	"rb": 2,
+	"tip": "HR",
+	"bot": "Did you receive negative feedback from someone and how did it feel? How did you fix that?",
+	"pitanje": "I receive negative feedback last week. It feels bad at first. I fixed it by asking for more details.",
+	"odgovor": "You should use RECEIVED instead of RECEIVE for past tense as in 'I received negative feedback last week'. Use FELT instead of FEELS for past tense as in 'It felt bad at first'. The third sentence is correctly formed."
+},
+{
+	"rb": 3,
+	"tip": "HR",
+	"bot": "What does hard work mean for you?",
+	"pitanje": "Hard work mean dedication for me. It means putting in extra hours. It’s about focus and discipline.",
+	"odgovor": "You should use MEANS instead of MEAN for singular subjects as in 'Hard work means dedication for me'. The second and third sentences are correctly formed."
+},
+{
+	"rb": 4,
+	"tip": "Technical",
+	"bot": "What is 'Dependency Injection' and how does it contribute to a software project's maintainability?",
+	"pitanje": "Dependency Injection is a design pattern. It make a software more maintainable. It allow components to be more decoupled.",
+	"odgovor": "You should use MAKES instead of MAKE for singular subjects as in 'It makes software more maintainable'. Use ALLOWS instead of ALLOW for singular subjects as in 'It allows components to be more decoupled'."
+},
+{
+	"rb": 5,
+	"tip": "Technical",
+	"bot": "Describe the SOLID principles of object-oriented design.",
+	"pitanje": "SOLID principles helps in making software. They ensures that software is modular. It makes changing and maintaining code easier.",
+	"odgovor": "You should use HELP instead of HELPS for plural subjects as in 'SOLID principles help in making software'. Use ENSURE instead of ENSURES for plural subjects as in 'They ensure that software is modular'. The third sentence is correctly formed."
+},
+{
+	"rb": 6,
+	"tip": "Technical",
+	"bot": "Explain the concept of 'Design Patterns' in software engineering and mention a few common patterns.",
+	"pitanje": "Design Patterns is solutions for common problems. They includes patterns like Singleton and Observer. It’s help in creating robust software.",
+	"odgovor": "You should use ARE instead of IS for plural subjects as in 'Design Patterns are solutions for common problems'. Use INCLUDE instead of INCLUDES for plural subjects as in 'They include patterns like Singleton and Observer'. Use HELPS instead of HELP for singular subjects as in 'It helps in creating robust software'."
+},
+{
+	"rb": 7,
+	"tip": "LeetCode",
+	"bot": "Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.",
+	"pitanje": "You have an array of integers. Every elements appear twice but one. Find that single ones.",
+	"odgovor": "You should use ELEMENT instead of ELEMENTS for singular agreement as in 'Every element appears twice but one'. Use ONE instead of ONES for singular subjects as in 'Find that single one'."
+},
+{
+	"rb": 8,
+	"tip": "LeetCode",
+	"bot": "Reverse a singly linked list. Example: Input: 1->2->3->4->5->NULL, Output: 5->4->3->2->1->NULL",
+	"pitanje": "To reversing a singly linked list is challenging. The example show how it done. It's important for understanding data structures.",
+	"odgovor": "You should use REVERSE instead of REVERSING for the infinitive form as in 'To reverse a singly linked list is challenging'. Use SHOWS instead of SHOW for singular subjects as in 'The example shows how it's done'. The third sentence is correctly formed."
+},
+{
+	"rb": 9,
+	"tip": "LeetCode",
+	"bot": "Implement the 'MyQueue' class that implements a queue using two stacks. The queue methods you need to implement are enqueue, dequeue, peek, empty.",
+	"pitanje": "Implementing 'MyQueue' class use two stacks. It have methods like enqueue and dequeue. This approach make the queue efficient.",
+	"odgovor": "You should use USES instead of USE for singular subjects as in 'Implementing the 'MyQueue' class uses two stacks'. Use HAS instead of HAVE for singular subjects as in 'It has methods like enqueue and dequeue'. Use MAKES instead of MAKE for singular subjects as in 'This approach makes the queue efficient'."
+}]

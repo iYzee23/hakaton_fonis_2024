@@ -1,0 +1,52 @@
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<nav class="navbar navbar-expand-lg header">
+    <div class="container-fluid justify-content-center">
+        <ul class="navbar-nav">
+            <li class="nav-item"></li>
+            <li class="nav-item"></li>
+            <li class="nav-item"></li>
+
+            <li class="nav-item">
+                <a class="nav-link  headerLink" routerLink="/home"> Home </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link  headerLink" routerLink="/interviews">Interview Simulation</a>
+            </li>
+
+            <li class="nav-item dropdown headerLogo" style="margin-bottom: 0px; padding-bottom: 0px;">
+                <p class="logo" style="margin-bottom: 0px; padding-bottom: 0px;">
+                    U Pravi Cas
+                </p>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link active headerLink"  routerLink="/chatbot">ChatBot</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link headerLink"  routerLink="/pairProgramming">Pair Programming</a>
+            </li>
+            <li class="nav-item">
+                <button type="button" class="btn" (click)="logout()">Log out</button>
+            </li>
+
+        </ul>
+
+    </div>
+</nav>
+<div class="loginDiv">
+    <div class="loginDivContent">
+        <h3><b>Chatbot</b></h3><br>
+        <label><b><i>Question [{{chbot.tip}}]</i></b> <br> {{chbot.bot}}</label><br><br>
+        <label><b><i>Answer</i></b> <br> {{answer}}</label><br><br>
+        <label class="pre-wrap"><b><i>Feedback</i></b> <br> {{splitIntoBullets(feedback)}}</label><br>
+    </div>
+    <br><br>
+    <button type="button" class="btn" (click)="generateHRQuestion()">HR question</button> &nbsp;
+    <button type="button" class="btn" (click)="generateTCHQuestion()">Technical question</button> <br><br>
+    <!-- <button type="button" class="btn spec" (click)="startListening()">Provide your answer</button> -->
+</div>

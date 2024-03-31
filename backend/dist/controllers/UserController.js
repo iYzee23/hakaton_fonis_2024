@@ -6,8 +6,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserController = void 0;
 const user_1 = __importDefault(require("../models/user"));
 const interview_1 = __importDefault(require("../models/interview"));
+const chatbot_1 = __importDefault(require("../models/chatbot"));
 class UserController {
     constructor() {
+        this.getBotSve = (req, res) => {
+            let rb = req.body.rb;
+            chatbot_1.default.findOne({ rb: rb }).then((data) => {
+                res.json(data);
+            }).catch((err) => console.log(err));
+            ;
+        };
         this.login = (req, res) => {
             let username = req.body.username;
             let password = req.body.password;
@@ -22,6 +30,13 @@ class UserController {
                 res.json(simulations);
             })
                 .catch((err) => console.log(err));
+        };
+        this.postaviFeedbackSimulacije = (req, res) => {
+            let id = req.body.id;
+            let feedb = req.body.feedback;
+            interview_1.default.findOneAndUpdate({ id: id }, { feedback: feedb }).then((data) => {
+                res.json({ message: 'ok' });
+            }).catch((err) => console.log(err));
         };
     }
 }

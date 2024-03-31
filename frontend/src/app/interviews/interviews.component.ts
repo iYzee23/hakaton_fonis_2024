@@ -12,7 +12,36 @@ import { User } from '../models/user';
 export class InterviewsComponent implements OnInit{
   constructor (private router:Router,private service:UserService){}
  
+  prviDiv:any;
+  drugiDiv:any;
+  firstOpen:boolean=true;
+
+  delay(ms: number): Promise<void> {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  async test(){
+    if(this.firstOpen){
+      this.prviDiv.classList.toggle("fade-in");
+      this.prviDiv.classList.toggle("fade-out");
+      await this.delay(500);
+      this.drugiDiv.classList.toggle("fade-out");
+      this.drugiDiv.classList.toggle("fade-in");
+      this.firstOpen=false;
+    }else{
+      this.drugiDiv.classList.toggle("fade-in");
+      this.drugiDiv.classList.toggle("fade-out");
+      await this.delay(500);
+      this.prviDiv.classList.toggle("fade-out");
+      this.prviDiv.classList.toggle("fade-in");
+      this.firstOpen=true;
+    }
+  }
+
   ngOnInit(): void {
+    this.prviDiv = document.querySelector("#prvi");
+    this.drugiDiv=document.querySelector('#drugi');
+
     let y = localStorage.getItem("loggedUser");
     if(y) this.user = JSON.parse(y);
     this.danasnjiDatum = this.danasnjiDan();
@@ -22,9 +51,27 @@ export class InterviewsComponent implements OnInit{
       data=>{
         if(data!=null){
           this.confirmedSimulations = data;
-          alert("ima")
-        }else{
-          alert(this.user.korime)
+          this.previousSimulations = data.filter(element=>{
+            if(element.datum<this.danasnjiDatum) return 1;
+            else if(element.datum>this.danasnjiDatum) return 0;
+            else{
+              if(element.vreme<this.vreme) return 1;
+              else return 0;
+            }
+          })
+
+          let tridana = this.narednaTriDana(this.danasnjiDan());
+          //let tridana = this.narednaTriDana("2024-03-30"); //for testing purposes je hardcoded
+          this.danasnjiDatum = "2024-03-31"; //for testing purposes
+          this.vreme = "19:22";
+
+          this.confirmedSimulations = this.confirmedSimulations.filter(element=> tridana.includes(element.datum));
+          this.confirmedSimulations = this.confirmedSimulations.filter(element=>{
+            if(element.datum == this.danasnjiDatum){
+              if(element.vreme > this.vreme) return 1;
+              else return 0;
+            }else return 1;
+          });
         }
       }
     )
@@ -35,6 +82,7 @@ export class InterviewsComponent implements OnInit{
   vreme:string="";
 
   confirmedSimulations:Interview[]=[];
+  previousSimulations:Interview[]=[];
 
   danasnjiDan():string{
     let danas = new Date();
@@ -90,6 +138,11 @@ export class InterviewsComponent implements OnInit{
   enterSimulation(simulation:Interview){
     localStorage.setItem("joinedSimulation",JSON.stringify(simulation));
     this.router.navigate(["jitsi"]);
+  }
+
+  showFeedback(simulation:Interview){
+    localStorage.setItem("viewedSimulation",JSON.stringify(simulation));
+    this.router.navigate(["feedback"]);
   }
 
   logout(){

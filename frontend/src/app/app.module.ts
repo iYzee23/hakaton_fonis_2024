@@ -10,6 +10,8 @@ import { PairProgrammingComponent } from './pair-programming/pair-programming.co
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { JitsimeetComponent } from './jitsimeet/jitsimeet.component';
+import { InterviewfeedbackComponent } from './interviewfeedback/interviewfeedback.component';
+import { ChatbotComponent } from './chatbot/chatbot.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { JitsimeetComponent } from './jitsimeet/jitsimeet.component';
     HomeComponent,
     InterviewsComponent,
     PairProgrammingComponent,
-    JitsimeetComponent
+    JitsimeetComponent,
+    InterviewfeedbackComponent,
+    ChatbotComponent
   ],
   imports: [
     BrowserModule,
