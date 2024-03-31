@@ -12,8 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { JitsimeetComponent } from './jitsimeet/jitsimeet.component';
 import { InterviewfeedbackComponent } from './interviewfeedback/interviewfeedback.component';
 import { ChatbotComponent } from './chatbot/chatbot.component';
-import {FullCalendarModule} from '@fullcalendar/angular';
-
+import { FullCalendarModule } from '@fullcalendar/angular';
+import { InterviewsPairComponent } from './interviews-pair/interviews-pair.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,8 @@ import {FullCalendarModule} from '@fullcalendar/angular';
     PairProgrammingComponent,
     JitsimeetComponent,
     InterviewfeedbackComponent,
-    ChatbotComponent
+    ChatbotComponent,
+    InterviewsPairComponent
   ],
   imports: [
     BrowserModule,

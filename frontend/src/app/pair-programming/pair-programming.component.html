@@ -55,5 +55,34 @@
     </div>
 </nav>
 <body>
-
+    <div class="loginDiv">
+        <div class="loginDivContent row">
+            <h3>Pair-programming with user: {{sagovornik}}</h3>
+            <h5>Date: {{interview.datum}} From: {{interview.vreme}}h To: {{interview.vremeKraja}}h</h5>
+            <br><br>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    
+                    <br>
+                    <div id="jitsi-iframe" class="col-sm-12 col-md-12 col-l-12 col-xl-12" style="padding-left: 30px;"></div>
+                    <br>
+    
+                    <div class="item-center"> 
+                        <button (click)="executeCommand('hangup')" type="button" class="btn" aria-hidden="true" title="Leave">Leave Simulation</button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div style="text-align:center; margin-left: 160px; margin-top: 10px; font-size: 30px;">
+                        <h1>Run JavaScript Code</h1>
+                        <textarea [(ngModel)]="code" rows="10" cols="40"></textarea><br>
+                        <button (click)="runCode()" style="margin-top: 10px;">Run</button>
+                        <div>
+                          <p>{{ output }}</p>
+                        </div>
+                     </div>  
+                </div>
+            </div> 
+        </div>
+    </div>
 </body>

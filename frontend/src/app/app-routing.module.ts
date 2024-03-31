@@ -7,6 +7,7 @@ import { PairProgrammingComponent } from './pair-programming/pair-programming.co
 import { JitsimeetComponent } from './jitsimeet/jitsimeet.component';
 import { InterviewfeedbackComponent } from './interviewfeedback/interviewfeedback.component';
 import { ChatbotComponent } from './chatbot/chatbot.component';
+import { InterviewsPairComponent } from './interviews-pair/interviews-pair.component';
 
 const routes: Routes = [
   {path:"", component:LoginComponent},
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path:"interviews",component:InterviewsComponent},
   {path:"jitsi",component:JitsimeetComponent},
   {path:"feedback",component:InterviewfeedbackComponent},
-  {path:"pairProgramming",component:PairProgrammingComponent},
+  {path:"pairProgramming",component:InterviewsPairComponent},
+  {path:"pairProgrammingConcrete",component:PairProgrammingComponent},
   {path:"chatbot",component:ChatbotComponent}
 ];
 

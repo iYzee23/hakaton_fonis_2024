@@ -3,6 +3,14 @@ import path from 'path';
 import { UserController } from '../controllers/UserController';
 const userRouter = express.Router();
 
+userRouter.route('/getPotvrdjeniPairProgr').post(
+    (req, res) => new UserController().getPotvrdjeniPairProgr(req, res)
+)
+
+userRouter.route('/run').post(
+    (req, res) => new UserController().run(req, res)
+)
+
 userRouter.route('/getBotSve').post(
     (req, res) => new UserController().getBotSve(req, res)
 )

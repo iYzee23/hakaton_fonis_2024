@@ -5,6 +5,7 @@ import { Interview } from './models/interview';
 import { Chatbot } from './models/chatbot';
 import { Availability } from './models/availability';
 import { Question } from './models/question';
+import { PairProgramming } from './models/pair_programming';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,14 @@ import { Question } from './models/question';
 export class UserService {
 
   constructor(private http:HttpClient) { }
+
+  getPotvrdjeniPairProgr(username:string){
+    return this.http.post<PairProgramming[]>(`http://localhost:4000/users/getPotvrdjeniPairProgr`,{username:username});
+  }
+  
+  runCode(code:string){
+    return this.http.post(`http://localhost:4000/users/run`,{code:code});
+  }
 
   getBotSve(rb:number){
     return this.http.post<Chatbot>(`http://localhost:4000/users/getBotSve`,{rb:rb});

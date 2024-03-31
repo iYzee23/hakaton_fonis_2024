@@ -1,0 +1,688 @@
+[{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e804a"
+  },
+  "id": 1,
+  "question": "Tell me about yourself?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e804b"
+  },
+  "id": 2,
+  "question": "What is the most challenging project you worked on?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e804c"
+  },
+  "id": 3,
+  "question": "Tell me an example when you successfully collaborated with your teammates?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e804d"
+  },
+  "id": 4,
+  "question": "Tell me an example when opinions on your team collided and how did you handle the situation?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e804e"
+  },
+  "id": 5,
+  "question": "Did you have to learn something quickly and how did you learn it?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e804f"
+  },
+  "id": 6,
+  "question": "Tell me about a time when you felt that you were treated unfairly and what did you learn from that experience?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8050"
+  },
+  "id": 7,
+  "question": "Tell me about your time when you had to adapt to some new project conditions and how did you organize?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8051"
+  },
+  "id": 8,
+  "question": "Tell me about a time when you had to persuade someone at work, what did you do?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8052"
+  },
+  "id": 9,
+  "question": "Tell me about a time when you failed at work and what did you learn from it?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8053"
+  },
+  "id": 10,
+  "question": "Give me 3 of your main weaknesses?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8054"
+  },
+  "id": 11,
+  "question": "What does hard work mean for you?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8055"
+  },
+  "id": 12,
+  "question": "What is your favorite project and main tasks and problems?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8056"
+  },
+  "id": 13,
+  "question": "Are there any more side projects on your side?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8057"
+  },
+  "id": 14,
+  "question": "Your plans for next 5 years?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8058"
+  },
+  "id": 15,
+  "question": "Who is the most successful person you know?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8059"
+  },
+  "id": 16,
+  "question": "Which skills do you share with the most successful person you know?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e805a"
+  },
+  "id": 17,
+  "question": "Youtuber or LinkedIn person who you watch for SE?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e805b"
+  },
+  "id": 18,
+  "question": "What is the last thing that you read from Software Engineering?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e805c"
+  },
+  "id": 19,
+  "question": "What was the most boring thing that you did in a project?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e805d"
+  },
+  "id": 20,
+  "question": "List of tasks that you would like to do the most",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e805e"
+  },
+  "id": 21,
+  "question": "Most boring thing during the project that you did?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e805f"
+  },
+  "id": 22,
+  "question": "Project that you did recently - how long it took and what was the result?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8060"
+  },
+  "id": 23,
+  "question": "What was the most exciting thing in that project?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8061"
+  },
+  "id": 24,
+  "question": "Was there something that you planned to do, but you did not?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8062"
+  },
+  "id": 25,
+  "question": "How did you get interested in Software engineering?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8063"
+  },
+  "id": 26,
+  "question": "If it was not software engineering, what it would be?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8064"
+  },
+  "id": 27,
+  "question": "What would the company and dream job look like that you would like to do it for a long time?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8065"
+  },
+  "id": 28,
+  "question": "What is like the limit to your challenges that you do not cross or rarely cross?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8066"
+  },
+  "id": 29,
+  "question": "Side project that you are currently working on?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8067"
+  },
+  "id": 30,
+  "question": "Have you ever worked under pressure? How did it feel?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8068"
+  },
+  "id": 31,
+  "question": "How do you prioritize tasks when you have multiple projects or deadlines?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8069"
+  },
+  "id": 32,
+  "question": "Why are you interested in working for this company and what do you think you can bring to the team?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e806a"
+  },
+  "id": 33,
+  "question": "If a manager asks you to do something that is potentially harmful for the company, what would you do?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e806b"
+  },
+  "id": 34,
+  "question": "What would someone that does not like you say to you?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e806c"
+  },
+  "id": 35,
+  "question": "Are you obsessed with high quality code?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e806d"
+  },
+  "id": 36,
+  "question": "Did you have to give something up?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e806e"
+  },
+  "id": 37,
+  "question": "Did you receive negative feedback from someone and how did it feel? How did you fix that?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e806f"
+  },
+  "id": 38,
+  "question": "Bigger picture or more detail focused person?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8070"
+  },
+  "id": 39,
+  "question": "What are the pros and cons of this approach?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8071"
+  },
+  "id": 40,
+  "question": "Did you solely focus on some project and how did it feel? What motivated you to do it?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8072"
+  },
+  "id": 41,
+  "question": "What motivated you to do the boring tasks during the internship?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8073"
+  },
+  "id": 42,
+  "question": "How would you define teamwork?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8074"
+  },
+  "id": 43,
+  "question": "What motivates you to do programming?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8075"
+  },
+  "id": 44,
+  "question": "Did you fail at work and how did it feel?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8076"
+  },
+  "id": 45,
+  "question": "More strict deadline oriented or not?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8077"
+  },
+  "id": 46,
+  "question": "What is your daily routine?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8078"
+  },
+  "id": 47,
+  "question": "How do you prioritize tasks?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8079"
+  },
+  "id": 48,
+  "question": "Can you tell me about a time when you had to work with a difficult team member and how you handled the situation?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e807a"
+  },
+  "id": 49,
+  "question": "How do you approach conflict resolution in a team setting?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e807b"
+  },
+  "id": 50,
+  "question": "Can you describe a situation where you had to take a leadership role and how you led your team to success?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e807c"
+  },
+  "id": 51,
+  "question": "Tell me about most complex project you had?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e807d"
+  },
+  "id": 52,
+  "question": "What would your manager say is your biggest strength?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e807e"
+  },
+  "id": 53,
+  "question": "Tell us your biggest fail in life and how did you handle it",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e807f"
+  },
+  "id": 54,
+  "question": "Tell us about your temperament",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8080"
+  },
+  "id": 55,
+  "question": "Are you competition oriented person?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8081"
+  },
+  "id": 56,
+  "question": "Why is my GPA as it is?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8082"
+  },
+  "id": 57,
+  "question": "Did you ever had the situation to explain something to people who doesn't have knowledge in that area?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8083"
+  },
+  "id": 58,
+  "question": "How do you transform plan into action?",
+  "type": 0
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8084"
+  },
+  "id": 59,
+  "type": 1,
+  "question": "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target. Example: Input: nums = [2,7,11,15], target = 9, Output: [0,1]"
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8085"
+  },
+  "id": 60,
+  "type": 1,
+  "question": "Reverse a singly linked list. Example: Input: 1->2->3->4->5->NULL, Output: 5->4->3->2->1->NULL"
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8086"
+  },
+  "id": 61,
+  "type": 1,
+  "question": "Given a string s, find the length of the longest substring without repeating characters. Example: Input: s = 'abcabcbb', Output: 3"
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8087"
+  },
+  "id": 62,
+  "type": 1,
+  "question": "Given an integer array nums, find the contiguous subarray which has the largest sum and return its sum. Example: Input: nums = [-2,1,-3,4,-1,2,1,-5,4], Output: 6"
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8088"
+  },
+  "id": 63,
+  "type": 1,
+  "question": "Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays. Example: Input: nums1 = [1,3], nums2 = [2], Output: 2.0"
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8089"
+  },
+  "id": 64,
+  "type": 1,
+  "question": "Implement the 'MyQueue' class that implements a queue using two stacks. The queue methods you need to implement are enqueue, dequeue, peek, empty."
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e808a"
+  },
+  "id": 65,
+  "type": 1,
+  "question": "Given a non-empty array of integers nums, every element appears twice except for one. Find that single one."
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e808b"
+  },
+  "id": 67,
+  "type": 1,
+  "question": "Write a function to find the longest common prefix string amongst an array of strings. If there is no common prefix, return an empty string."
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e808c"
+  },
+  "id": 69,
+  "type": 1,
+  "question": "Explain the concept of 'Inversion of Control' and how it's applied in software engineering. Provide examples of where it might be used."
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e808d"
+  },
+  "id": 70,
+  "type": 1,
+  "question": "What is a 'race condition' in the context of concurrent programming and how can it be prevented?"
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e808e"
+  },
+  "id": 71,
+  "type": 1,
+  "question": "Describe the difference between 'stack' and 'heap' memory in terms of allocation and usage."
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e808f"
+  },
+  "id": 72,
+  "type": 1,
+  "question": "Explain the principles of RESTful APIs and discuss how they differ from SOAP."
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8090"
+  },
+  "id": 73,
+  "type": 1,
+  "question": "What are microservices and how do they differ from a monolithic architecture?"
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8091"
+  },
+  "id": 74,
+  "type": 1,
+  "question": "Describe the SOLID principles of object-oriented design."
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8092"
+  },
+  "id": 75,
+  "type": 1,
+  "question": "Explain what 'Continuous Integration' and 'Continuous Deployment' are, and how they benefit the software development process."
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8093"
+  },
+  "id": 76,
+  "type": 1,
+  "question": "What is 'Test-Driven Development' (TDD), and how does it impact the software development lifecycle?"
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8094"
+  },
+  "id": 77,
+  "type": 1,
+  "question": "Explain the concept of 'Design Patterns' in software engineering and mention a few common patterns."
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8095"
+  },
+  "id": 78,
+  "type": 1,
+  "question": "What is the CAP theorem and how does it apply to distributed systems design?"
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8096"
+  },
+  "id": 79,
+  "type": 1,
+  "question": "Explain what 'Agile Software Development' entails and how it differs from traditional waterfall methodology."
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8097"
+  },
+  "id": 80,
+  "type": 1,
+  "question": "What are 'Data Structures' and why are they critical in software development? Provide examples."
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8098"
+  },
+  "id": 81,
+  "type": 1,
+  "question": "Describe 'Scalability' in the context of web applications and strategies to achieve it."
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e8099"
+  },
+  "id": 82,
+  "type": 1,
+  "question": "What is 'Dependency Injection' and how does it contribute to a software project's maintainability?"
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e809a"
+  },
+  "id": 83,
+  "type": 1,
+  "question": "Explain the differences between 'Functional Programming' and 'Object-Oriented Programming'."
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e809b"
+  },
+  "id": 84,
+  "type": 1,
+  "question": "What is a 'Blockchain' and how can it be applied in software development outside of cryptocurrencies?"
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e809c"
+  },
+  "id": 85,
+  "type": 1,
+  "question": "Discuss the concept of 'Immutable Infrastructure' in cloud computing and its advantages."
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e809d"
+  },
+  "id": 86,
+  "type": 1,
+  "question": "Explain the differences and similarities between 'Machine Learning' and 'Artificial Intelligence' in the context of software development."
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e809e"
+  },
+  "id": 87,
+  "type": 1,
+  "question": "What is 'DevOps' and how does it integrate with Agile methodologies?"
+},
+{
+  "_id": {
+    "$oid": "6608cda668df1b12c87e809f"
+  },
+  "id": 88,
+  "type": 1,
+  "question": "Describe the importance of 'User Experience (UX)' design in software development and the impact it has on project success."
+}]

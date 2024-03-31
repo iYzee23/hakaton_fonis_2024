@@ -1,0 +1,18 @@
+[{
+    "id": 1,
+    "ucesnik1": "pedja",
+    "ucesnik2": "luana",
+    "datum": "2024-03-28",
+    "vreme": "13:30",
+    "vremeKraja": "15:00",
+    "status": "potvrdjen"
+  },
+  {
+    "id": 2,
+    "ucesnik1": "pedja",
+    "ucesnik2": "bogi",
+    "datum": "2024-03-31",
+    "vreme": "19:30",
+    "vremeKraja": "21:00",
+    "status": "potvrdjen"
+  }]

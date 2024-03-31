@@ -6,6 +6,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const UserController_1 = require("../controllers/UserController");
 const userRouter = express_1.default.Router();
+userRouter.route('/getPotvrdjeniPairProgr').post((req, res) => new UserController_1.UserController().getPotvrdjeniPairProgr(req, res));
+userRouter.route('/run').post((req, res) => new UserController_1.UserController().run(req, res));
 userRouter.route('/getBotSve').post((req, res) => new UserController_1.UserController().getBotSve(req, res));
 userRouter.route('/login').post((req, res) => new UserController_1.UserController().login(req, res));
 userRouter.route('/getPotvrdjeneSimulacije').post((req, res) => new UserController_1.UserController().getPotvrdjeneSimulacije(req, res));

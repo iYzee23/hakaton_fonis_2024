@@ -4,8 +4,45 @@ import interview from '../models/interview';
 import chatbot from '../models/chatbot';
 import availability from '../models/availability';
 import question from '../models/question';
+import pair_programming from '../models/pair_programming';
 
 export class UserController {
+    getPotvrdjeniPairProgr = (req: express.Request, res: express.Response) => {
+        let username = req.body.username;
+
+        pair_programming.find({ $or: [{ ucesnik1: username }, { ucesnik2: username }] })
+        .then((simulations) => {
+            res.json(simulations);
+        })
+        .catch((err) => console.log(err));
+    };
+
+    run  = async (req:any, res:any) => {
+        const vm = require('vm');
+        const util = require('util');
+        const customLog = (...args: any[]) => {
+            const output = args.map(arg => util.inspect(arg)).join(' ');
+            return output;
+        };
+        const userCode = req.body.code;
+        let scriptOutput = "";
+        try {
+            const script = new vm.Script(userCode);
+            const context = vm.createContext({
+                console: {
+                    log: (...args: any) => {
+                        scriptOutput += customLog(...args) + '\n';
+                    }
+                }
+            });
+            await script.runInContext(context);
+            res.json({"output":scriptOutput})
+        } catch (err:any) {
+            res.json({"error": err.message})
+            console.log(err.message)
+        }
+    };
+
     getBotSve = (req: express.Request, res: express.Response) => {
         let rb = req.body.rb;
 

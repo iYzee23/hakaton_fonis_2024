@@ -1,0 +1,35 @@
+[{
+  "_id": {
+    "$oid": "6608bdcf68df1b12c87e8044"
+  },
+  "datum": "2024-04-03",
+  "korime": "pedja",
+  "pocetakRada": "08:00",
+  "krajRada": "12:00"
+},
+{
+  "_id": {
+    "$oid": "6608bdcf68df1b12c87e8045"
+  },
+  "datum": "2024-04-04",
+  "nastavnik": "pedja",
+  "pocetakRada": "10:00",
+  "krajRada": "18:00"
+},
+{
+  "_id": {
+    "$oid": "6608bdcf68df1b12c87e8046"
+  },
+  "datum": "2024-04-01",
+  "nastavnik": "pedja",
+  "pocetakRada": "09:30",
+  "krajRada": "22:00"
+},
+{
+  "_id": {
+    "$oid": "6608c3d939d0d48e26211a95"
+  },
+  "datum": "2024-04-01",
+  "pocetakRada": "09:00",
+  "krajRada": "19:30"
+}]
