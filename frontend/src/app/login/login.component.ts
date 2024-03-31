@@ -29,7 +29,6 @@ export class LoginComponent {
           
           localStorage.setItem("loggedUser",JSON.stringify(data));
           this.errorMessageLogin="";
-          alert("ok");
           this.router.navigate(["home"]);
         }
       }

@@ -71,7 +71,26 @@ export class UserController {
         .then((simulations) => {
             res.json(simulations);
         })
-        .catch((err) => console.log(err));
+        .
+        catch((err) => console.log(err));
+    }
+
+    getPotvrdjeneSimulacijePair = (req: express.Request, res: express.Response) => {
+        let username = req.body.username;
+    
+        pair_programming.find({
+            $or: [
+                { ucesnik1: username, ucesnik2: { $ne: "" } }, 
+                { ucesnik2: username, ucesnik1: { $ne: "" } }
+            ]
+        })
+        .then((simulations) => {
+            res.json(simulations);
+        })
+        .catch((err) => {
+            console.error(err);
+            res.status(500).json({ message: "Error occurred while fetching simulations." });
+        });
     }
 
 
@@ -183,7 +202,6 @@ export class UserController {
         interview.findOneAndUpdate({ id: inter.id }, inter, { new: true })
             .then((updatedInterview) => {
                 if (updatedInterview) {
-                    console.log("found")
                     res.json({ message: "ok", updatedInterview });
                    
                 } else {
@@ -199,6 +217,93 @@ export class UserController {
     
 
     getQuestions = (req: express.Request, res: express.Response) => {
+        let rb = req.body.rb;
+
+        question.findOne({id:rb}).then(
+            (data) => {
+                res.json(data);
+            }
+        ).catch((err)=>console.log(err));;
+    };
+
+    getUnpairedInterviewPair = (req: express.Request, res: express.Response) => {
+        let type = req.body.type;
+
+        pair_programming.find({ status: "pending"}).then(
+            (rv)=>{
+                res.json(rv);
+            }
+        ).catch((err)=>console.log(err));
+    }
+    
+    createInterviewPairRequest = (req: express.Request, res: express.Response) => {
+        let inter = req.body.interview;
+    
+        // Assuming interview is your Mongoose model
+        pair_programming.findOne({}, {}, { sort: { 'id': -1 } })
+            .then((latestInterview) => {
+                if (latestInterview) {
+                    // Set the id of the new interview object
+                    inter.id = latestInterview.id + 1; // Assuming id is a sequential number
+                    
+                    // Create a new interview object
+                    let noviInter = new pair_programming(inter);
+    
+                    // Save the new interview object
+                    noviInter.save()
+                        .then(() => {
+                            res.json({ message: "ok" });
+                        })
+                        .catch((err) => {
+                            console.error(err);
+                            res.status(500).json({ message: "error" });
+                        });
+                } else {
+                    // If there are no existing interviews, set id to 1
+                    inter.id = 1;
+    
+                    // Create a new interview object
+                    let noviInter = new pair_programming(inter);
+    
+                    // Save the new interview object
+                    noviInter.save()
+                        .then(() => {
+                            res.json({ message: "ok" });
+                        })
+                        .catch((err) => {
+                            console.error(err);
+                            res.status(500).json({ message: "error" });
+                        });
+                }
+            })
+            .catch((err) => {
+                console.error(err);
+                res.status(500).json({ message: "error" });
+            });
+    }
+    
+
+    pairInterviewPair = (req: express.Request, res: express.Response) => {
+        let inter = req.body.interview;
+    
+        pair_programming.findOneAndUpdate({ id: inter.id }, inter, { new: true })
+            .then((updatedInterview) => {
+                if (updatedInterview) {
+                    console.log("found")
+                    res.json({ message: "ok", updatedInterview });
+                   
+                } else {
+                    res.status(404).json({ message: "Interview not found" });
+                    
+                }
+            })
+            .catch((err) => {
+                console.error(err);
+                res.status(500).json({ message: "error" });
+            });
+    }
+
+    getQuestionPair = (req: express.Request, res: express.Response) => {
         let rb = req.body.rb;
 
         question.findOne({id:rb}).then(

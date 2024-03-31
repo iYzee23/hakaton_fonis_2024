@@ -64,18 +64,18 @@ label{
 }
 
 .navbar-nav>li {
-    margin-left: 1em;
-    margin-right: 1em;
+    margin-left: 0.6em;
+    margin-right: 0.6em;
 }
 
 .navbar-nav>a {
-    margin-left: 1em;
-    margin-right: 1em;
+    margin-left: 0.6em;
+    margin-right: 0.6em;
 }
 
 .headerLogo {
-    margin-left: 3em;
-    margin-right: 3em;
+    margin-left: 0.6em;
+    margin-right: 0.6em;
 }
 
 .logo {

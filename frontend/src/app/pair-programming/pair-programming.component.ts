@@ -3,6 +3,7 @@ import { UserService } from '../user.service';
 import { Component, OnInit } from '@angular/core';
 import { User } from '../models/user';
 import { Interview } from '../models/interview';
+import { PairProgramming } from '../models/pair_programming';
 declare var JitsiMeetExternalAPI: any;
 
 @Component({
@@ -41,7 +42,7 @@ export class PairProgrammingComponent implements OnInit {
   api: any;
   user: any;
 
-  interview:Interview=new Interview();
+  interview:PairProgramming=new PairProgramming();
 
   ulogovan:User=new User();
   sagovornik:String='';

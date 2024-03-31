@@ -44,7 +44,6 @@ export class InterviewsComponent implements OnInit {
     let neupareni = this.service.getUnpairedInterview(this.selectedType).subscribe(
       data => {
         if (data != null) {
-          alert(data)
           if (data.length % 2 == 0) {
             this.requestMessage = "Your request has been received. The call will appear in your call list and calendar as soon as someone is paired with you.";
 
@@ -88,7 +87,6 @@ export class InterviewsComponent implements OnInit {
 
 
           } else {
-            alert("ima neki");
             //uzmemo poslednji podatak tj onaj na poziciji data.length-1 zapravo 
             //njemu azuriramo status i ucesnik1
 
@@ -350,7 +348,7 @@ export class InterviewsComponent implements OnInit {
     this.privremen.vreme = this.vremeP;
     this.privremen.vremeKraja = this.satKasnije(this.vremeP);
     this.service.pairInterview(this.privremen).subscribe();
-
+    window.location.reload();
   }
 
   satKasnije(vreme: string): string {
@@ -378,6 +376,31 @@ export class InterviewsComponent implements OnInit {
       async data => {
         if (data != null) {
           this.confirmedSimulations = data;
+
+           //KALENDAR
+           for (let i = 0; i < this.confirmedSimulations.length; i++) {
+            let datumVremePocetka = new Date(this.confirmedSimulations[i].datum);
+            let sati = this.confirmedSimulations[i].vreme.split(':')[0];
+            let minuti = this.confirmedSimulations[i].vreme.split(':')[1];
+            datumVremePocetka.setHours(parseInt(sati));
+            datumVremePocetka.setMinutes(parseInt(minuti));
+
+            let datumVremeKraja = new Date(this.confirmedSimulations[i].datum);
+            sati = this.confirmedSimulations[i].vremeKraja.split(':')[0];
+            minuti = this.confirmedSimulations[i].vremeKraja.split(':')[1];
+            datumVremeKraja.setHours(parseInt(sati));
+            datumVremeKraja.setMinutes(parseInt(minuti));
+            this.kalendarEvents.push(
+              {
+                title: ("Simulation : ( " + this.confirmedSimulations[i].tip + " )"),
+                start: datumVremePocetka,
+                end: datumVremeKraja,
+                color: '#043c2c'
+              }
+            );
+
+          }
+          
           this.previousSimulations = data.filter(element => {
             if (element.datum < this.danasnjiDatum) return 1;
             else if (element.datum > this.danasnjiDatum) return 0;
@@ -400,53 +423,6 @@ export class InterviewsComponent implements OnInit {
             } else return 1;
           });
 
-
-          //KALENDAR
-          for (let i = 0; i < this.confirmedSimulations.length; i++) {
-            let datumVremePocetka = new Date(this.confirmedSimulations[i].datum);
-            let sati = this.confirmedSimulations[i].vreme.split(':')[0];
-            let minuti = this.confirmedSimulations[i].vreme.split(':')[1];
-            datumVremePocetka.setHours(parseInt(sati));
-            datumVremePocetka.setMinutes(parseInt(minuti));
-
-            let datumVremeKraja = new Date(this.confirmedSimulations[i].datum);
-            sati = this.confirmedSimulations[i].vremeKraja.split(':')[0];
-            minuti = this.confirmedSimulations[i].vremeKraja.split(':')[1];
-            datumVremeKraja.setHours(parseInt(sati));
-            datumVremeKraja.setMinutes(parseInt(minuti));
-            this.kalendarEvents.push(
-              {
-                title: ("Simulation : ( " + this.confirmedSimulations[i].tip + " )"),
-                start: datumVremePocetka,
-                end: datumVremeKraja,
-                color: '#043c2c'
-              }
-            );
-
-          }
-
-          for (let i = 0; i < this.previousSimulations.length; i++) {
-            let datumVremePocetka = new Date(this.previousSimulations[i].datum);
-            let sati = this.previousSimulations[i].vreme.split(':')[0];
-            let minuti = this.previousSimulations[i].vreme.split(':')[1];
-            datumVremePocetka.setHours(parseInt(sati));
-            datumVremePocetka.setMinutes(parseInt(minuti));
-
-            let datumVremeKraja = new Date(this.previousSimulations[i].datum);
-            sati = this.previousSimulations[i].vremeKraja.split(':')[0];
-            minuti = this.previousSimulations[i].vremeKraja.split(':')[1];
-            datumVremeKraja.setHours(parseInt(sati));
-            datumVremeKraja.setMinutes(parseInt(minuti));
-            this.kalendarEvents.push(
-              {
-                title: ("Simulation : ( " + this.previousSimulations[i].tip + " )"),
-                start: datumVremePocetka,
-                end: datumVremeKraja,
-                color: '#043c2c'
-              }
-            );
-
-          }
 
           await this.service.getAvailability(this.user.korime).subscribe(
             data => {

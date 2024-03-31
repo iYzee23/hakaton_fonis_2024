@@ -35,7 +35,7 @@
 
             <li class="nav-item dropdown headerLogo" style="margin-bottom: 0px; padding-bottom: 0px;">
                 <p class="logo" style="margin-bottom: 0px; padding-bottom: 0px;">
-                    U Pravi Cas
+                    SpeakTech Bridge
                 </p>
             </li>
 
@@ -82,18 +82,17 @@
             <h3>Simulations in the next three days</h3><br>
             <div><br></div>
             <div class="table-responsive-lg table-responsive-md table-responsive-sm">
-                <table class="table table-striped table-hover" *ngIf="confirmedPairs.length>0">
+                <table class="table table-striped table-hover" *ngIf="confirmedSimulations.length>0">
                     <thead>
                         <tr>
                             <th>Participants</th>
                             <th>Date</th>
                             <th>Time</th>
-                            <th>Type</th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let simulation of confirmedPairs; let index = index">
+                        <tr *ngFor="let simulation of confirmedSimulations; let index = index">
                             <td>{{simulation.ucesnik1}} - {{simulation.ucesnik2}}</td>
                             <td>{{simulation.datum}}</td>
                             <td>{{simulation.vreme}}</td>
@@ -105,9 +104,54 @@
                         </tr>
                     </tbody>
                 </table>
-                <p *ngIf="confirmedPairs.length==0">No scheduled pair programmings in the next three days.</p>
+                <p *ngIf="confirmedSimulations.length==0">No scheduled interview simulations in the next three days.</p>
             </div>
 
+            <br>
+            <hr>
+            <br>
+            <h3>My Calendar Overview</h3><br>
+            <div class=" row calendarContainer">
+              <full-calendar [options]="kalendarOptions"></full-calendar>
+            </div>
+            
+            <br>
+            <hr>
+            <br>
+            <div>
+                <h3>Define Availability</h3><br>
+                <label>Date and Time</label><br>
+                <input type="date" class="forminput" [(ngModel)]="datumRada"><br><br>
+                <input type="time" class="forminput" [(ngModel)]="pocetakRada"><br><br>
+                <input type="time" class="forminput" [(ngModel)]="krajRada"><br><br>
+                <button type="button" class="btn" (click)="definisiRadno()" >Definisi</button> &nbsp;
+                <br><br><p class="errorMessage">{{errorMessageRadno}}</p>
+            </div>
+
+
+            
+            <h3>Past Simulations</h3><br>
+            <div><br></div>
+            <div class="table-responsive-lg table-responsive-md table-responsive-sm">
+                <table class="table table-striped table-hover" *ngIf="previousSimulations.length>0">
+                    <thead>
+                        <tr>
+                            <th>Participants</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let simulation of previousSimulations; let index = index">
+                            <td>{{simulation.ucesnik1}} - {{simulation.ucesnik2}}</td>
+                            <td>{{simulation.datum}}</td>
+                            <td>{{simulation.vreme}}</td>
+                           
+                        </tr>
+                    </tbody>
+                </table>
+                <p *ngIf="previousSimulations.length==0">No previous simulations.</p>
+            </div>
       
       </div>
       
@@ -117,7 +161,20 @@
           <button  type="button" class="btn" (click)="test()" [disabled]="firstOpen==false">Request a Simulation</button>
           <br><br>
         </div>
-       
+
+        <div *ngIf="!firstRequest">
+            <h3>Paired User's Calendar Overview</h3><br>
+            <div class=" row calendarContainer">
+              <full-calendar [options]="kalendarOptionsPaired"></full-calendar>
+            </div>
+            <br>
+            <button type="button" class="btn" (click)="schedule()">Schedule</button>
         </div>
+        <div *ngIf="firstRequest">
+            <h3>{{requestMessage}}</h3><br>
         </div>
+
+        
+      </div>
+    </div>
 </body>

@@ -9,6 +9,7 @@ let PairProgramming = new Schema(
         datum:String,
         vreme:String,
         vremeKraja:String,
+        pitanje:String,
         status:String,
     },
     {

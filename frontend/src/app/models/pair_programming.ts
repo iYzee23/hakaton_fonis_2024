@@ -5,5 +5,6 @@ export class PairProgramming{
     datum:string="";
     vreme:string="";
     vremeKraja:string="";
+    pitanje:string="";
     status:string="";
 }

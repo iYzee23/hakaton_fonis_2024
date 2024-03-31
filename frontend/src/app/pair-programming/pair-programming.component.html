@@ -35,7 +35,7 @@
 
             <li class="nav-item dropdown headerLogo" style="margin-bottom: 0px; padding-bottom: 0px;">
                 <p class="logo" style="margin-bottom: 0px; padding-bottom: 0px;">
-                    U Pravi Cas
+                    SpeakTech Bridge
                 </p>
             </li>
 
@@ -61,11 +61,12 @@
             <h5>Date: {{interview.datum}} From: {{interview.vreme}}h To: {{interview.vremeKraja}}h</h5>
             <br><br>
             <hr>
+            <h5>Task: {{interview.pitanje}}</h5>
             <div class="row">
                 <div class="col-md-6">
                     
                     <br>
-                    <div id="jitsi-iframe" class="col-sm-12 col-md-12 col-l-12 col-xl-12" style="padding-left: 30px;"></div>
+                    <div id="jitsi-iframe" class="col-sm-12 col-md-12 col-l-12 col-xl-12" style="padding-left: 10px;"></div>
                     <br>
     
                     <div class="item-center"> 
@@ -73,9 +74,9 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div style="text-align:center; margin-left: 160px; margin-top: 10px; font-size: 30px;">
+                    <div style="text-align:center; margin-left: 200px; margin-top: 10px; font-size: 30px;">
                         <h1>Run JavaScript Code</h1>
-                        <textarea [(ngModel)]="code" rows="10" cols="40"></textarea><br>
+                        <textarea [(ngModel)]="code" rows="10" cols="35"></textarea><br>
                         <button (click)="runCode()" style="margin-top: 10px;">Run</button>
                         <div>
                           <p>{{ output }}</p>
